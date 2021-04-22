@@ -1,0 +1,18 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #custForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="cust.name"
+               class="form-control" id="name" name="name" placeholder="Edit name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="cust.email"
+               class="form-control" id="email" name="email" placeholder="Edit email address">
+      </div>
+      <button type="submit"  class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

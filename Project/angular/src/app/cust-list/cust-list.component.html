@@ -1,0 +1,25 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cust of Customers">
+        <td class="hidden">{{ cust.id }}</td>
+        <td>{{ cust.name }}</td>
+        <td><a href="mailto:{{ cust.email }}">{{ cust.email }}</a></td>
+        <td><button class="btn btn-danger" (click)="deleteCustomer(cust)">Delete</button></td>
+        <td><button class="btn btn-outline-secondary" (click)="editCustomer(cust.id)">Edit</button></td>
+      </tr>
+      </tbody>
+<!--      <app-edit-customer [id]="Id"></app-edit-customer>-->
+    </table>
+  </div>
+</div>
+

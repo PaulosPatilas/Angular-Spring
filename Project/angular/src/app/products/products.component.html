@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-lg-3">
+
+      <h1 class="my-4">Categories</h1>
+      <div *ngFor="let category of Categories"  class="list-group active" >
+        <button (click)='categoryProducts(category.id)' class="list-group-item">{{category.name}}</button>
+      </div>
+    </div>
+<div class="col-lg-9">
+      <div class="row">
+
+        <div  *ngFor="let product of Products" class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+            <h4 class="card-title">
+               <a>{{product.pr_Name}}</a>
+              </h4>
+              <p class="card-text">{{product.description}} </p>
+              <p class="btn btn-danger btn-block">{{product.pr_Value}} $ </p>
+            </div>
+            <div class="card-footer">
+            <a (click)="addProdToCart(product.pr_ID)" class="btn btn-success btn-block">Add to Cart</a>
+              <div class="def-number-input number-input safari_only">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                <input  [(ngModel)]="numeric" class="quantity" min="0" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+              </div>
+           </div>
+          </div>
+      </div>
+    </div>
+ </div>
+</div>
+  <app-shopping-cart #cartComponent [ids]="ids"></app-shopping-cart>
+  <button (click)="refresh()" class="btn-success"> Refresh </button>
+</div>

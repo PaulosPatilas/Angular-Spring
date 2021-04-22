@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of Product">
+        <td class="hidden">{{ product.pr_ID }}</td>
+        <td>{{ product.pr_Name }}</td>
+        <td>{{ product.pr_Value }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="order()" class="btn-success"> Order </button>
+</div>
